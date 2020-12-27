@@ -1,30 +1,53 @@
 buildscript {
     ext {
-        gradle_plugin_version = '3.6.3'
-        kotlin_plugin_version = '1.3.72'
-        gradle_versions_plugin_version = '0.28.0'
+        //Config constants
+        compile_sdk = 30
+        target_sdk = 30
+        min_sdk = 21
+        application_id = 'com.maruiz.pet'
+        version_name = '1.0.0'
+        version_code = 4
+        test_instrumentation_runner = 'androidx.test.runner.AndroidJUnitRunner'
 
-        appcompat_version = '1.1.0'
-        constraint_layout_version = '1.1.3'
-        recycler_version = '1.1.0'
-        cardview_version = '1.0.0'
-        viewmodel_version = '2.2.0'
-        retrofit_version = '2.8.1'
-        coroutines_version = '1.3.3'
-        moshi_version = '1.9.2'
-        koin_version = '2.1.5'
-        expresso_version = '3.2.0'
-        nav_version = '2.2.2'
-        arrow_version = '0.10.5'
+        //Gradle dependencies
+        gradle_plugin_version = '4.1.1'
+        kotlin_plugin_version = '1.4.20-RC'
+        build_tools = '30.0.2'
+        gradle_versions_plugin_version = '0.36.0'
+
+        //Android libraries
+        appcompat_version = '1.3.0-alpha02'
+        constraint_layout_version = '2.0.4'
+        lifecycle_version = '2.3.0-beta01'
+        retrofit_version = '2.9.0'
+        coroutines_version = '1.4.1'
+        moshi_version = '1.11.0'
+        koin_version = '2.2.0'
+        nav_version = '2.3.1'
+        security_crypto_version = '1.1.0-alpha02'
+        kate_version = '0.4.0'
+        arrow_version = '0.11.0'
+        lottie_version = '3.5.0'
+        okhttp_logging_interceptor_version = '4.10.0-RC1'
+        chunker_version = '3.4.0'
+        custom_tabs_version = '1.3.0-rc01'
+        swipe_refresh_version = '1.1.0'
         coil_version = '0.9.5'
 
-        //Test versions
-        fragment_version = '1.2.4'
-        nav_version_testing = '2.1.0'
-        junit_version = '1.1.1'
-        mockito_version = '2.2.0'
-        kluent_version = '1.61'
-        robolectric_version = '4.3.1'
+        //Unit Test
+        robolectric_version = '4.5-alpha-3'
+        junit_version = '4.13.1'
+        mockito_version = '3.6.0'
+        kluent_version = '1.64'
+        test_core_version = '1.3.1-alpha02'
+        android_junit_version = '1.1.2'
+        fragment_testing_version = '1.3.0-beta01'
+        arch_core_testing_version = '2.1.0'
+        jwt_version = '2.0.0'
+
+        //Android Instrumentation Testing
+        espresso_version = '3.4.0-alpha02'
+        uiautomator_version = '2.2.0'
 
         gradlePluginDependencies = [
                 gradlePlugin            : "com.android.tools.build:gradle:$gradle_plugin_version",
@@ -34,38 +57,52 @@ buildscript {
         ]
 
         projectDependencies = [
-                appCompat         : "androidx.appcompat:appcompat:$appcompat_version",
-                constraintLayout  : "androidx.constraintlayout:constraintlayout:$constraint_layout_version",
-                recycler          : "androidx.recyclerview:recyclerview:$recycler_version",
-                cardView          : "androidx.cardview:cardview:$cardview_version",
-                viewModel         : "androidx.lifecycle:lifecycle-viewmodel-ktx:$viewmodel_version",
-                coil              : "io.coil-kt:coil:$coil_version",
-                retrofit          : "com.squareup.retrofit2:retrofit:$retrofit_version",
-                retrofitConverter : "com.squareup.retrofit2:converter-moshi:$retrofit_version",
-                retrofitMock      : "com.squareup.retrofit2:retrofit-mock:$retrofit_version",
-                moshi             : "com.squareup.moshi:moshi:$moshi_version",
-                moshiKotlin       : "com.squareup.moshi:moshi-kotlin:$moshi_version",
-                koinAndroid       : "org.koin:koin-android:$koin_version",
-                koinViewModel     : "org.koin:koin-androidx-viewmodel:$koin_version",
-                coroutinesAndroid : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version",
-                navigationFragment: "androidx.navigation:navigation-fragment-ktx:$nav_version",
-                navigationUi      : "androidx.navigation:navigation-ui-ktx:$nav_version",
-                arrow             : "io.arrow-kt:arrow-syntax:$arrow_version",
+                appCompat               : "androidx.appcompat:appcompat:$appcompat_version",
+                constraintLayout        : "androidx.constraintlayout:constraintlayout:$constraint_layout_version",
+                viewModel               : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version",
+                retrofit                : "com.squareup.retrofit2:retrofit:$retrofit_version",
+                retrofitConverter       : "com.squareup.retrofit2:converter-moshi:$retrofit_version",
+                retrofitMock            : "com.squareup.retrofit2:retrofit-mock:$retrofit_version",
+                moshi                   : "com.squareup.moshi:moshi:$moshi_version",
+                moshiKotlin             : "com.squareup.moshi:moshi-kotlin:$moshi_version",
+                koinAndroid             : "org.koin:koin-android:$koin_version",
+                koinViewModel           : "org.koin:koin-androidx-viewmodel:$koin_version",
+                coroutinesAndroid       : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version",
+                navigationFragment      : "androidx.navigation:navigation-fragment-ktx:$nav_version",
+                navigationUi            : "androidx.navigation:navigation-ui-ktx:$nav_version",
+                securityCrypto          : "androidx.security:security-crypto:$security_crypto_version",
+                krate                   : "hu.autsoft:krate:$kate_version",
+                arrow                   : "io.arrow-kt:arrow-syntax:$arrow_version",
+                lottie                  : "com.airbnb.android:lottie:$lottie_version",
+                okhttpLoggingInterceptor: "com.squareup.okhttp3:logging-interceptor:$okhttp_logging_interceptor_version",
+                chromeCustomTabs        : "androidx.browser:browser:$custom_tabs_version",
+                swipeRefresh            : "androidx.swiperefreshlayout:swiperefreshlayout:$swipe_refresh_version",
+                jwtDecode               : "com.auth0.android:jwtdecode:$jwt_version",
+                lifeCommon              : "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version",
+                coil                    : "io.coil-kt:coil:$coil_version",
         ]
 
-        projectTestingDependencies = [
-                archCore       : "androidx.arch.core:core-testing:$nav_version_testing",
-                unitTest       : "androidx.test.ext:junit:$junit_version",
-                expressoContrib: "androidx.test.espresso:espresso-contrib:$expresso_version",
-                mockitoKotlin  : "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockito_version",
-                coroutinesTest : "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_version",
-                kluent         : "org.amshove.kluent:kluent-android:$kluent_version",
-                koinTest       : "org.koin:koin-test:$koin_version",
-                robolectric    : "org.robolectric:robolectric:$robolectric_version",
+        unitTesting = [
+                kotlin      : "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_plugin_version",
+                kotlinTest  : "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_plugin_version",
+                robolectric : "org.robolectric:robolectric:$robolectric_version",
+                junit       : "junit:junit:$junit_version",
+                mockito     : "org.mockito:mockito-core:$mockito_version",
+                kluent      : "org.amshove.kluent:kluent:$kluent_version",
+                testCore    : "androidx.test:core:$test_core_version",
+                androidJunit: "androidx.test.ext:junit:$android_junit_version",
+                koinTest    : "org.koin:koin-test:$koin_version",
+                coreTesting : "androidx.arch.core:core-testing:$arch_core_testing_version",
+                espresso    : "androidx.test.espresso:espresso-contrib:$espresso_version",
         ]
 
-        projectDebugTestingDependencies = [
-                fragmentTesting: "androidx.fragment:fragment-testing:$fragment_version",
+        debugImplementation = [
+                fragmentTesting: "androidx.fragment:fragment-testing:$fragment_testing_version",
+                chunkerLibrary : "com.github.chuckerteam.chucker:library:$chunker_version",
+        ]
+
+        releaseImplementation = [
+                chunkerNoOp: "com.github.chuckerteam.chucker:library-no-op:$chunker_version",
         ]
     }
 }

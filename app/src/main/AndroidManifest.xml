@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.maruiz.books">
+          package="com.maruiz.pet">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <application
@@ -9,9 +9,9 @@
             android:label="@string/app_name"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
-            android:name="com.maruiz.books.presentation.app.BookApp"
+            android:name="com.maruiz.pet.presentation.app.PetApp"
             android:theme="@style/AppTheme">
-        <activity android:name="com.maruiz.books.presentation.view.activity.MainActivity">
+        <activity android:name="com.maruiz.pet.presentation.view.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

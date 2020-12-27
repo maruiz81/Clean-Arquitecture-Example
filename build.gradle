@@ -7,7 +7,6 @@ buildscript {
     repositories {
         google()
         jcenter()
-        
     }
     dependencies {
         gradlePluginDependencies.each { dependency ->
@@ -20,10 +19,9 @@ allprojects {
     repositories {
         google()
         jcenter()
-        
     }
 }
 
-task clean(type: Delete) {
+task clean (type: Delete) {
     delete rootProject.buildDir
 }

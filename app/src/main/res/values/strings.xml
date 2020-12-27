@@ -1,4 +1,5 @@
 <resources>
-    <string name="app_name">Arrow Example</string>
-    <string name="error">Error in the Request</string>
+    <string name="app_name">Pet app</string>
+    <string name="generic_error">Ups!… something went wrong</string>
+
 </resources>
