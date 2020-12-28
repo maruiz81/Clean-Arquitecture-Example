@@ -1,0 +1,167 @@
+[
+  {
+    "bookId": 1,
+    "title": "Title 1",
+    "author": "Author 1",
+    "short_synopsis": "Synopsis 1",
+    "synopsis": "Synopsis synopsis 1",
+    "image": "Image 1",
+    "first_published": 1877,
+    "score": 4.04,
+    "genres": [
+      "Classics",
+      "Fiction",
+      "Cultural-Russia",
+      "Romance"
+    ]
+  },
+  {
+    "bookId": 2,
+    "title": "Title 2",
+    "author": "Author 2",
+    "short_synopsis": "Synopsis 2",
+    "synopsis": "Synopsis synopsis 2",
+    "image": "Image 2",
+    "first_published": 1960,
+    "score": 4.27,
+    "genres": [
+      "Classics",
+      "Fiction",
+      "Historical-Historical Fiction",
+      "Academic-School"
+    ]
+  },
+  {
+    "bookId": 3,
+    "title": "Title 3",
+    "author": "Author 3",
+    "short_synopsis": "Synopsis 3",
+    "synopsis": "Synopsis synopsis 3",
+    "image": "Image 3",
+    "first_published": 1925,
+    "score": 3.91,
+    "genres": [
+      "Classics",
+      "Fiction",
+      "Historical-Historical Fiction",
+      "Literature"
+    ]
+  },
+  {
+    "bookId": 4,
+    "title": "Title 4",
+    "author": "Author 4",
+    "short_synopsis": "Synopsis 4",
+    "synopsis": "Synopsis synopsis 4",
+    "image": "Image 4",
+    "first_published": 1913,
+    "score": 4.14,
+    "genres": [
+      "Classics",
+      "Fiction",
+      "Cultural-France",
+      "Literature",
+      "European Literature-French Literature",
+      "Philosophy"
+    ]
+  },
+  {
+    "bookId": 5,
+    "title": "Title 5",
+    "author": "Author 5",
+    "short_synopsis": "Synopsis 5",
+    "synopsis": "Synopsis synopsis 5",
+    "image": "Image 5",
+    "first_published": 1615,
+    "score": 3.87,
+    "genres": [
+      "Classics",
+      "Fiction",
+      "Literature",
+      "Academic-School",
+      "European Literature-Spanish Literature",
+      "Adventure",
+      "Novels"
+    ]
+  },
+  {
+    "bookId": 6,
+    "title": "Title 6",
+    "author": "Author 6",
+    "short_synopsis": "Synopsis 6",
+    "synopsis": "Synopsis synopsis 6",
+    "image": "Image 6",
+    "first_published": 1922,
+    "score": 3.73,
+    "genres": [
+      "Classics",
+      "Fiction",
+      "Literature",
+      "Novels"
+    ]
+  },
+  {
+    "bookId": 7,
+    "title": "Title 7",
+    "author": "Author 7",
+    "short_synopsis": "Synopsis 7",
+    "synopsis": "Synopsis synopsis 7",
+    "image": "Image 7",
+    "first_published": 1851,
+    "score": 3.49,
+    "genres": [
+      "Classics",
+      "Fiction",
+      "Literature",
+      "Adventure"
+    ]
+  },
+  {
+    "bookId": 8,
+    "title": "Title 8",
+    "author": "Author 8",
+    "short_synopsis": "Synopsis 8",
+    "synopsis": "Synopsis synopsis 8",
+    "image": "Image 8",
+    "first_published": 1603,
+    "score": 4.02,
+    "genres": [
+      "Classics",
+      "Plays",
+      "Fiction",
+      "Drama"
+    ]
+  },
+  {
+    "bookId": 9,
+    "title": "Title 9",
+    "author": "Author 9",
+    "short_synopsis": "Synopsis 9",
+    "synopsis": "Synopsis synopsis 9",
+    "image": "Image 9",
+    "first_published": 1867,
+    "score": 4.11,
+    "genres": [
+      "Classics",
+      "Fiction",
+      "Historical-Historical Fiction",
+      "Cultural-Russia"
+    ]
+  },
+  {
+    "bookId": 10,
+    "title": "Title 10",
+    "author": "Author 10",
+    "short_synopsis": "Synopsis 10",
+    "synopsis": "Synopsis synopsis 10",
+    "image": "Image 10",
+    "first_published": -700,
+    "score": 3.76,
+    "genres": [
+      "Classics",
+      "Fiction",
+      "Poetry",
+      "Fantasy-Mythology"
+    ]
+  }
+]

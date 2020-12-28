@@ -28,7 +28,7 @@ buildscript {
         kate_version = '0.4.0'
         arrow_version = '0.11.0'
         lottie_version = '3.5.0'
-        okhttp_logging_interceptor_version = '4.10.0-RC1'
+        okhttp_version = '4.10.0-RC1'
         chunker_version = '3.4.0'
         custom_tabs_version = '1.3.0-rc01'
         swipe_refresh_version = '1.1.0'
@@ -74,7 +74,7 @@ buildscript {
                 krate                   : "hu.autsoft:krate:$kate_version",
                 arrow                   : "io.arrow-kt:arrow-syntax:$arrow_version",
                 lottie                  : "com.airbnb.android:lottie:$lottie_version",
-                okhttpLoggingInterceptor: "com.squareup.okhttp3:logging-interceptor:$okhttp_logging_interceptor_version",
+                okhttpLoggingInterceptor: "com.squareup.okhttp3:logging-interceptor:$okhttp_version",
                 chromeCustomTabs        : "androidx.browser:browser:$custom_tabs_version",
                 swipeRefresh            : "androidx.swiperefreshlayout:swiperefreshlayout:$swipe_refresh_version",
                 jwtDecode               : "com.auth0.android:jwtdecode:$jwt_version",
@@ -83,17 +83,18 @@ buildscript {
         ]
 
         unitTesting = [
-                kotlin      : "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_plugin_version",
-                kotlinTest  : "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_plugin_version",
-                robolectric : "org.robolectric:robolectric:$robolectric_version",
-                junit       : "junit:junit:$junit_version",
-                mockito     : "org.mockito:mockito-core:$mockito_version",
-                kluent      : "org.amshove.kluent:kluent:$kluent_version",
-                testCore    : "androidx.test:core:$test_core_version",
-                androidJunit: "androidx.test.ext:junit:$android_junit_version",
-                koinTest    : "org.koin:koin-test:$koin_version",
-                coreTesting : "androidx.arch.core:core-testing:$arch_core_testing_version",
-                espresso    : "androidx.test.espresso:espresso-contrib:$espresso_version",
+                kotlin       : "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_plugin_version",
+                kotlinTest   : "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_plugin_version",
+                robolectric  : "org.robolectric:robolectric:$robolectric_version",
+                junit        : "junit:junit:$junit_version",
+                mockito      : "org.mockito:mockito-core:$mockito_version",
+                kluent       : "org.amshove.kluent:kluent:$kluent_version",
+                testCore     : "androidx.test:core:$test_core_version",
+                androidJunit : "androidx.test.ext:junit:$android_junit_version",
+                koinTest     : "org.koin:koin-test:$koin_version",
+                coreTesting  : "androidx.arch.core:core-testing:$arch_core_testing_version",
+                espresso     : "androidx.test.espresso:espresso-contrib:$espresso_version",
+                mockWebServer: "com.squareup.okhttp3:mockwebserver:$okhttp_version",
         ]
 
         debugImplementation = [

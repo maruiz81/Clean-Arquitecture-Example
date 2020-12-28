@@ -11,9 +11,12 @@ import com.maruiz.pet.data.repository.BookRepository
 import com.maruiz.pet.data.service.BookService
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import okhttp3.HttpUrl
+import okhttp3.HttpUrl.Companion.toHttpUrl
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidContext
+import org.koin.core.qualifier.named
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
@@ -28,6 +31,8 @@ val dataModule = module {
             .add(KotlinJsonAdapterFactory())
             .build()
     }
+
+    single(named(DataNaming.BASE_URL)) { getProperty(BASE_URL_KEY).toHttpUrl() }
 
     single {
         val loggingInterceptor: HttpLoggingInterceptor =
@@ -44,7 +49,7 @@ val dataModule = module {
     single {
         Retrofit.Builder()
             .client(get())
-            .baseUrl(getProperty(BASE_URL_KEY))
+            .baseUrl(get<HttpUrl>(named(DataNaming.BASE_URL)))
             .addConverterFactory(MoshiConverterFactory.create(get()))
             .build()
     }
@@ -68,4 +73,8 @@ val dataModule = module {
 
     single<BookRepository> { BookRepository.Network(bookService = get()) }
     single<AuthenticationRepository> { AuthenticationRepository.Disk(authentication = get()) }
+}
+
+enum class DataNaming {
+    BASE_URL
 }
