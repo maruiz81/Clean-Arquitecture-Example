@@ -21,5 +21,5 @@ fun RecyclerView.setBooks(books: List<BookPresentationModel>) {
 
 @BindingAdapter(value = ["set_image"])
 fun ImageView.setImage(imageUrl: String) {
-    this.load(imageUrl)
+    load(imageUrl)
 }

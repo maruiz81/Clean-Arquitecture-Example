@@ -7,13 +7,14 @@ import androidx.lifecycle.viewModelScope
 import arrow.core.fix
 import com.maruiz.pet.domain.usecases.GetBooks
 import com.maruiz.pet.presentation.model.BookPresentationModel
+import com.maruiz.pet.presentation.utils.SingleLiveEvent
 
 class BookListViewModel(
     private val getBooks: GetBooks,
     private val genericErrorMsg: String
 ) : ViewModel() {
     private val _books = MutableLiveData<List<BookPresentationModel>>(emptyList())
-    private val _failure = MutableLiveData<String>()
+    private val _failure = SingleLiveEvent<String>()
 
     val books: LiveData<List<BookPresentationModel>> = _books
     val failure: LiveData<String> = _failure
