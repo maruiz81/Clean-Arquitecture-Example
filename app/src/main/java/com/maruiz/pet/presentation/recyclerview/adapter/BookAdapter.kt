@@ -14,7 +14,7 @@ class BookAdapter : RecyclerView.Adapter<BookAdapter.ViewHolder>() {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
-        ViewHolder(RowBookBinding.inflate(LayoutInflater.from(parent.context)))
+        ViewHolder(RowBookBinding.inflate(LayoutInflater.from(parent.context), parent, false))
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.binding.run {
