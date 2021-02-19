@@ -5,7 +5,7 @@ import arrow.core.Either
 import arrow.core.Left
 import arrow.core.Right
 import com.maruiz.pet.data.error.Failure
-import com.maruiz.pet.domain.model.BookModelDomainModel
+import com.maruiz.pet.domain.model.BookDomainModel
 import com.maruiz.pet.domain.usecases.GetBooks
 import com.maruiz.pet.presentation.di.PresentationNaming
 import com.maruiz.pet.presentation.di.presentationModule
@@ -59,7 +59,7 @@ class BookListViewModelTest : AutoCloseKoinTest() {
     fun `should publish the book list`() {
         runBlocking {
             `when`(getBooks.invoke(any(), any(), any())).thenAnswer { args ->
-                args.getArgument<(Either<Failure, List<BookModelDomainModel>>) -> Unit>(2)(
+                args.getArgument<(Either<Failure, List<BookDomainModel>>) -> Unit>(2)(
                     Right(
                         getBookList()
                     )
@@ -80,7 +80,7 @@ class BookListViewModelTest : AutoCloseKoinTest() {
 
     private fun getBookList() =
         (1..10).map { index ->
-            BookModelDomainModel(
+            BookDomainModel(
                 title = "Title $index",
                 author = "Author $index",
                 shortSynopsis = "Short synopsis $index",
@@ -93,7 +93,7 @@ class BookListViewModelTest : AutoCloseKoinTest() {
     fun `should return an error message when fails`() {
         runBlocking {
             `when`(getBooks.invoke(any(), any(), any())).thenAnswer { args ->
-                args.getArgument<(Either<Failure, List<BookModelDomainModel>>) -> Unit>(2)(
+                args.getArgument<(Either<Failure, List<BookDomainModel>>) -> Unit>(2)(
                     Left(
                         Failure.GenericError
                     )

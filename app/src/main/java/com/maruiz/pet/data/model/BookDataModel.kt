@@ -8,5 +8,7 @@ data class BookDataModel(
     val author: String = "",
     @Json(name = "short_synopsis") val shortSynopsis: String = "",
     val synopsis: String = "",
-    val image: String = ""
+    val image: String = "",
+    @Json(name = "first_published") val published: Int,
+    val genres: List<String> = emptyList()
 )

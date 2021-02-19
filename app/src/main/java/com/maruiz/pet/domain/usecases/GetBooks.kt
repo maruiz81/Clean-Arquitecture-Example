@@ -4,20 +4,11 @@ import arrow.core.Either
 import arrow.core.ForEither
 import com.maruiz.pet.data.error.Failure
 import com.maruiz.pet.data.repository.BookRepository
-import com.maruiz.pet.domain.model.BookModelDomainModel
+import com.maruiz.pet.domain.mapper.convertToDomain
+import com.maruiz.pet.domain.model.BookDomainModel
 
 class GetBooks(private val bookRepository: BookRepository) :
-    UseCase<ForEither, Unit, List<BookModelDomainModel>>() {
-    override suspend fun run(params: Unit): Either<Failure, List<BookModelDomainModel>> =
-        bookRepository.getBooks().map { success ->
-            success.map {
-                BookModelDomainModel(
-                    it.title,
-                    it.author,
-                    it.shortSynopsis,
-                    it.synopsis,
-                    it.image
-                )
-            }
-        }
+    UseCase<ForEither, Unit, List<BookDomainModel>>() {
+    override suspend fun run(params: Unit): Either<Failure, List<BookDomainModel>> =
+        bookRepository.getBooks().map { success -> success.map { it.convertToDomain() }}
 }
