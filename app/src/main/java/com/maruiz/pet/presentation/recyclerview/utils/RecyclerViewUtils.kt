@@ -4,7 +4,7 @@ import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import coil.api.load
+import coil.load
 import com.maruiz.pet.presentation.model.BookPresentationModel
 import com.maruiz.pet.presentation.recyclerview.adapter.BookAdapter
 

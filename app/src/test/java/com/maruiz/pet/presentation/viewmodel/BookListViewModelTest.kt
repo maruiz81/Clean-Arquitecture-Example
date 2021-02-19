@@ -9,8 +9,8 @@ import com.maruiz.pet.domain.model.BookModelDomainModel
 import com.maruiz.pet.domain.usecases.GetBooks
 import com.maruiz.pet.presentation.di.PresentationNaming
 import com.maruiz.pet.presentation.di.presentationModule
+import com.nhaarman.mockitokotlin2.any
 import kotlinx.coroutines.runBlocking
-import org.amshove.kluent.any
 import org.amshove.kluent.shouldBeEqualTo
 import org.junit.Before
 import org.junit.Rule

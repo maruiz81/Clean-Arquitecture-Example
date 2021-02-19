@@ -10,7 +10,6 @@ import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import coil.util.CoilContentProvider
 import com.maruiz.pet.R
 import com.maruiz.pet.presentation.model.BookPresentationModel
 import com.maruiz.pet.presentation.viewmodel.BookListViewModel
@@ -28,7 +27,6 @@ import org.mockito.Mockito.`when`
 import org.mockito.junit.MockitoJUnit
 import org.mockito.junit.MockitoRule
 import org.mockito.quality.Strictness
-import org.robolectric.Robolectric
 
 @RunWith(AndroidJUnit4::class)
 class BookListFragmentTest : AutoCloseKoinTest() {
@@ -42,7 +40,6 @@ class BookListFragmentTest : AutoCloseKoinTest() {
 
     @Before
     fun setUp() {
-        Robolectric.setupContentProvider(CoilContentProvider::class.java)
         loadKoinModules(
             module(override = true) {
                 factory { bookListViewModel }

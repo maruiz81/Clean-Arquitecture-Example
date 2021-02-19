@@ -6,47 +6,45 @@ buildscript {
         min_sdk = 21
         application_id = 'com.maruiz.pet'
         version_name = '1.0.0'
-        version_code = 4
+        version_code = 1
         test_instrumentation_runner = 'androidx.test.runner.AndroidJUnitRunner'
 
         //Gradle dependencies
-        gradle_plugin_version = '4.1.1'
-        kotlin_plugin_version = '1.4.20-RC'
+        gradle_plugin_version = '4.1.2'
+        kotlin_plugin_version = '1.4.30'
         build_tools = '30.0.2'
         gradle_versions_plugin_version = '0.36.0'
 
         //Android libraries
-        appcompat_version = '1.3.0-alpha02'
+        appcompat_version = '1.3.0-beta01'
         constraint_layout_version = '2.0.4'
-        lifecycle_version = '2.3.0-beta01'
+        lifecycle_version = '2.3.0'
         retrofit_version = '2.9.0'
         coroutines_version = '1.4.1'
         moshi_version = '1.11.0'
         koin_version = '2.2.0'
-        nav_version = '2.3.1'
-        security_crypto_version = '1.1.0-alpha02'
+        nav_version = '2.3.3'
         kate_version = '0.4.0'
         arrow_version = '0.11.0'
-        lottie_version = '3.5.0'
-        okhttp_version = '4.10.0-RC1'
+        lottie_version = '3.6.1'
+        okhttp_version = '4.9.1'
         chunker_version = '3.4.0'
-        custom_tabs_version = '1.3.0-rc01'
         swipe_refresh_version = '1.1.0'
-        coil_version = '0.9.5'
+        coil_version = '1.1.1'
 
         //Unit Test
-        robolectric_version = '4.5-alpha-3'
-        junit_version = '4.13.1'
-        mockito_version = '3.6.0'
-        kluent_version = '1.64'
-        test_core_version = '1.3.1-alpha02'
+        robolectric_version = '4.5.1'
+        junit_version = '4.13.2'
+        mockito_version = '3.7.7'
+        kluent_version = '1.65'
+        test_core_version = '1.4.0-alpha04'
         android_junit_version = '1.1.2'
-        fragment_testing_version = '1.3.0-beta01'
+        fragment_testing_version = '1.3.0'
         arch_core_testing_version = '2.1.0'
-        jwt_version = '2.0.0'
+        mockito_kotlin_version = '2.2.0'
 
         //Android Instrumentation Testing
-        espresso_version = '3.4.0-alpha02'
+        espresso_version = '3.4.0-alpha04'
         uiautomator_version = '2.2.0'
 
         gradlePluginDependencies = [
@@ -70,14 +68,10 @@ buildscript {
                 coroutinesAndroid       : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version",
                 navigationFragment      : "androidx.navigation:navigation-fragment-ktx:$nav_version",
                 navigationUi            : "androidx.navigation:navigation-ui-ktx:$nav_version",
-                securityCrypto          : "androidx.security:security-crypto:$security_crypto_version",
-                krate                   : "hu.autsoft:krate:$kate_version",
                 arrow                   : "io.arrow-kt:arrow-syntax:$arrow_version",
                 lottie                  : "com.airbnb.android:lottie:$lottie_version",
                 okhttpLoggingInterceptor: "com.squareup.okhttp3:logging-interceptor:$okhttp_version",
-                chromeCustomTabs        : "androidx.browser:browser:$custom_tabs_version",
                 swipeRefresh            : "androidx.swiperefreshlayout:swiperefreshlayout:$swipe_refresh_version",
-                jwtDecode               : "com.auth0.android:jwtdecode:$jwt_version",
                 lifeCommon              : "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version",
                 coil                    : "io.coil-kt:coil:$coil_version",
         ]
@@ -95,6 +89,7 @@ buildscript {
                 coreTesting  : "androidx.arch.core:core-testing:$arch_core_testing_version",
                 espresso     : "androidx.test.espresso:espresso-contrib:$espresso_version",
                 mockWebServer: "com.squareup.okhttp3:mockwebserver:$okhttp_version",
+                mockitoKotlin: "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockito_kotlin_version",
         ]
 
         debugImplementation = [

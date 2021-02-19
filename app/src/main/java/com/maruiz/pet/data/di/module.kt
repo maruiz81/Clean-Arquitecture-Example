@@ -1,12 +1,7 @@
 package com.maruiz.pet.data.di
 
-import androidx.security.crypto.EncryptedSharedPreferences
-import androidx.security.crypto.MasterKey
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.maruiz.pet.BuildConfig
-import com.maruiz.pet.data.preferences.EncryptedPreferences
-import com.maruiz.pet.data.preferences.authentication.AuthenticationHelper
-import com.maruiz.pet.data.repository.AuthenticationRepository
 import com.maruiz.pet.data.repository.BookRepository
 import com.maruiz.pet.data.service.BookService
 import com.squareup.moshi.Moshi
@@ -23,7 +18,6 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 
 val dataModule = module {
 
-    val preferencesFileName = "preferences.property"
     val BASE_URL_KEY = "base_url"
 
     single {
@@ -56,23 +50,7 @@ val dataModule = module {
 
     single { get<Retrofit>().create(BookService::class.java) }
 
-    single {
-        //The shared preferences will be created as EncryptedSharedPreferences to add extra security
-        EncryptedSharedPreferences.create(
-            androidContext(),
-            preferencesFileName,
-            MasterKey.Builder(androidContext())
-                .setKeyScheme(MasterKey.KeyScheme.AES256_GCM)
-                .build(),
-            EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
-            EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
-        )
-    }
-    single { EncryptedPreferences(encryptedSharedPreferences = get()) }
-    single { AuthenticationHelper(sharedPreferences = get()) }
-
     single<BookRepository> { BookRepository.Network(bookService = get()) }
-    single<AuthenticationRepository> { AuthenticationRepository.Disk(authentication = get()) }
 }
 
 enum class DataNaming {
