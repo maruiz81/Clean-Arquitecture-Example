@@ -8,27 +8,27 @@
         <variable
                 name="model"
                 type="com.maruiz.pet.presentation.model.BookPresentationModel" />
-
-        <variable
-                name="clickListener"
-                type="com.maruiz.pet.presentation.viewmodel.BookListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/big_margin"
-            android:layout_marginTop="@dimen/medium_margin"
-            android:layout_marginRight="@dimen/big_margin"
-            android:onClick="@{() -> clickListener.bookClicked(model)}">
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/big_margin">
+
+        <ImageView
+                android:id="@+id/arrow_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/small_margin"
+                android:src="@drawable/ic_arrow_back" />
 
         <ImageView
                 android:id="@+id/image"
                 android:layout_width="80dp"
                 android:layout_height="150dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="@dimen/medium_margin"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/arrow_back"
                 app:set_image="@{model.image}"
                 tools:ignore="ContentDescription" />
 
@@ -44,7 +44,7 @@
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@id/subtitle"
                 app:layout_constraintLeft_toRightOf="@id/image"
-                app:layout_constraintRight_toLeftOf="@id/chevron"
+                app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_chainStyle="packed" />
 
@@ -59,7 +59,7 @@
                 android:textSize="16sp"
                 app:layout_constraintBottom_toTopOf="@id/genre"
                 app:layout_constraintLeft_toLeftOf="@id/title"
-                app:layout_constraintRight_toRightOf="@id/title"
+                app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/title" />
 
         <TextView
@@ -70,20 +70,25 @@
                 android:gravity="start"
                 android:text="@{model.genres}"
                 android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/synopsis"
                 app:layout_constraintLeft_toLeftOf="@id/title"
-                app:layout_constraintRight_toRightOf="@id/title"
+                app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/subtitle" />
 
-        <ImageView
-                android:id="@+id/chevron"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_chevron_right"
+        <TextView
+                android:id="@+id/synopsis"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginLeft="@dimen/medium_margin"
+                android:layout_marginTop="@dimen/small_margin"
+                android:layout_marginRight="@dimen/medium_margin"
+                android:lineSpacingExtra="@dimen/tiny_margin"
+                android:text="@{model.synopsis}"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="ContentDescription" />
+                app:layout_constraintTop_toBottomOf="@id/image" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

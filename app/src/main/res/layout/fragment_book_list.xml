@@ -9,10 +9,11 @@
                 type="com.maruiz.pet.presentation.viewmodel.BookListViewModel" />
     </data>
 
-        <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:set_books="@{ viewModel.books }" />
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:click_listener="@{ viewModel }"
+            app:set_books="@{ viewModel.books }" />
 
 </layout>

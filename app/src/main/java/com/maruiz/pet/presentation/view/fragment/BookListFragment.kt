@@ -3,6 +3,7 @@ package com.maruiz.pet.presentation.view.fragment
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import com.maruiz.pet.R
 import com.maruiz.pet.databinding.FragmentBookListBinding
@@ -25,6 +26,10 @@ class BookListFragment : Fragment(R.layout.fragment_book_list) {
 
         bookListViewModel.failure.observe(viewLifecycleOwner) {
             Snackbar.make(view, it, Snackbar.LENGTH_LONG).show()
+        }
+
+        bookListViewModel.detail.observe(viewLifecycleOwner) {
+            findNavController().navigate(BookListFragmentDirections.bookToDetail(it))
         }
     }
 }

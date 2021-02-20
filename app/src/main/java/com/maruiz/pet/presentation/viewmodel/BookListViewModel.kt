@@ -13,12 +13,14 @@ import com.maruiz.pet.presentation.utils.SingleLiveEvent
 class BookListViewModel(
     private val getBooks: GetBooks,
     private val genericErrorMsg: String
-) : ViewModel() {
+) : ViewModel(), BookListener {
     private val _books = MutableLiveData<List<BookPresentationModel>>(emptyList())
     private val _failure = SingleLiveEvent<String>()
+    private val _detail = SingleLiveEvent<BookPresentationModel>()
 
     val books: LiveData<List<BookPresentationModel>> = _books
     val failure: LiveData<String> = _failure
+    val detail: LiveData<BookPresentationModel> = _detail
 
     init {
         loadBooks()
@@ -31,4 +33,12 @@ class BookListViewModel(
             }
         }
     }
+
+    override fun bookClicked(book: BookPresentationModel) {
+        _detail.value = book
+    }
+}
+
+interface BookListener {
+    fun bookClicked(book: BookPresentationModel)
 }

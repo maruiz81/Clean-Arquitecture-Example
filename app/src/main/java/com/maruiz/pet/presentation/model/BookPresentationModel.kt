@@ -1,5 +1,9 @@
 package com.maruiz.pet.presentation.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class BookPresentationModel(
     val title: String,
     val subtitle: String,
@@ -7,4 +11,4 @@ data class BookPresentationModel(
     val synopsis: String,
     val image: String,
     val genres: String
-)
+) : Parcelable

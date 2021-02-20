@@ -7,11 +7,16 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.maruiz.pet.presentation.model.BookPresentationModel
 import com.maruiz.pet.presentation.recyclerview.adapter.BookAdapter
+import com.maruiz.pet.presentation.viewmodel.BookListener
 
-@BindingAdapter(value = ["set_books"])
-fun RecyclerView.setBooks(books: List<BookPresentationModel>) {
+@BindingAdapter(value = ["set_books", "click_listener"])
+fun RecyclerView.setUpList(
+    books: List<BookPresentationModel>,
+    bookListener: BookListener
+) {
     val bookAdapter = BookAdapter().apply {
         renderables = books
+        bookClickListener = bookListener
     }
 
     layoutManager = LinearLayoutManager(context)
