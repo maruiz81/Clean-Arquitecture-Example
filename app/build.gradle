@@ -49,6 +49,10 @@ android {
             returnDefaultValues = true
         }
     }
+    lintOptions {
+        disable "ExperimentalIssueRegistry", "LintError"
+    }
+
 }
 
 dependencies {
