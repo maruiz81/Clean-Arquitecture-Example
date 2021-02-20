@@ -9,6 +9,6 @@ data class BookDataModel(
     @Json(name = "short_synopsis") val shortSynopsis: String = "",
     val synopsis: String = "",
     val image: String = "",
-    @Json(name = "first_published") val published: Int,
+    @Json(name = "first_published") val published: Int = 0,
     val genres: List<String> = emptyList()
 )

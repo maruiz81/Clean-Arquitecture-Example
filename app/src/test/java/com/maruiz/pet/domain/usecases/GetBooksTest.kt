@@ -73,7 +73,9 @@ class GetBooksTest : AutoCloseKoinTest() {
                 author = "Author $index",
                 shortSynopsis = "Short synopsis $index",
                 synopsis = "Synopsis $index",
-                image = "Image $index"
+                image = "Image $index",
+                published = 2018,
+                genres = listOf("classic", "fiction")
             )
         }
 

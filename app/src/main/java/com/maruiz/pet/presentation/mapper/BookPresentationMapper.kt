@@ -10,5 +10,5 @@ fun BookDomainModel.convertToPresentation(): BookPresentationModel =
         shortSynopsis = shortSynopsis,
         synopsis = synopsis,
         image = image,
-        genres = genres.foldRight("", { acc, genre -> "$acc, $genre" }).drop(1)
+        genres = genres.reduceRight { acc, genre -> "$acc, $genre" }
     )
