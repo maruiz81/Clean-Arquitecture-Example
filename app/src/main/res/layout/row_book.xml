@@ -14,76 +14,17 @@
                 type="com.maruiz.pet.presentation.viewmodel.BookListener" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ImageView
+            android:id="@+id/image"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/big_margin"
-            android:layout_marginTop="@dimen/medium_margin"
-            android:layout_marginRight="@dimen/big_margin"
-            android:onClick="@{() -> clickListener.bookClicked(model)}">
+            android:layout_height="180dp"
+            android:scaleType="fitXY"
+            android:layout_margin="@dimen/tiniest_margin"
+            android:onClick="@{() -> clickListener.bookClicked(model)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:set_image="@{model.image}"
+            tools:ignore="ContentDescription" />
 
-        <ImageView
-                android:id="@+id/image"
-                android:layout_width="@dimen/image_with"
-                android:layout_height="@dimen/image_height"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:set_image="@{model.image}"
-                tools:ignore="ContentDescription" />
-
-        <TextView
-                android:id="@+id/title"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/big_margin"
-                android:gravity="start"
-                android:text="@{model.title}"
-                android:textColor="@color/black"
-                android:textSize="@dimen/font_big"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@id/subtitle"
-                app:layout_constraintLeft_toRightOf="@id/image"
-                app:layout_constraintRight_toLeftOf="@id/chevron"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_chainStyle="packed" />
-
-        <TextView
-                android:id="@+id/subtitle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/small_margin"
-                android:gravity="start"
-                android:text="@{model.subtitle}"
-                android:textColor="@color/black"
-                android:textSize="@dimen/font_medium"
-                app:layout_constraintBottom_toTopOf="@id/genre"
-                app:layout_constraintLeft_toLeftOf="@id/title"
-                app:layout_constraintRight_toRightOf="@id/title"
-                app:layout_constraintTop_toBottomOf="@id/title" />
-
-        <TextView
-                android:id="@+id/genre"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/small_margin"
-                android:gravity="start"
-                android:text="@{model.genres}"
-                android:textSize="@dimen/font_small"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="@id/title"
-                app:layout_constraintRight_toRightOf="@id/title"
-                app:layout_constraintTop_toBottomOf="@id/subtitle" />
-
-        <ImageView
-                android:id="@+id/chevron"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_chevron_right"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="ContentDescription" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -2,6 +2,7 @@ package com.maruiz.pet.presentation.recyclerview.utils
 
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
@@ -19,7 +20,7 @@ fun RecyclerView.setUpList(
         bookClickListener = bookListener
     }
 
-    layoutManager = LinearLayoutManager(context)
+    layoutManager = GridLayoutManager(context, 3)
     adapter = bookAdapter
 }
 
