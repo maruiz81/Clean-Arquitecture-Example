@@ -78,10 +78,6 @@ class BookListFragmentTest : AutoCloseKoinTest() {
             .check { book, view, exception ->
                 matches(withText(book.title))
                     .check(view.findViewById(R.id.title), exception)
-                matches(withText(book.subtitle))
-                    .check(view.findViewById(R.id.subtitle), exception)
-                matches(withText(book.genres))
-                    .check(view.findViewById(R.id.genre), exception)
             }
     }
 

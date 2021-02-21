@@ -1,3 +1,5 @@
-# Android Base project
+# Android clean architecture example
 
-This is a base project with an initial configuration intended to be the base of a new project.
+Example of clean architecture project.
+
+![alt text](/images/home_screen.png "Home screen")
